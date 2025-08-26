@@ -420,4 +420,16 @@ h1, h2, h3, h4, h5, h6, p{
     gap: 10px;
 }
 
+body{
+    overflow: hidden;
+}
+
+.image-2.active{
+    transform: translate(-50%, -50%);
+    display: block;
+    max-height: 85vh;
+    opacity: 1;
+}
+
+
 }
