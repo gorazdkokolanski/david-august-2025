@@ -431,5 +431,8 @@ body{
     opacity: 1;
 }
 
+body:has(.misc-main){
+    overflow: scroll;
+}
 
 }
