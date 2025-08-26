@@ -446,13 +446,19 @@ h1, h2, h3, h4, h5, h6, p {
         max-height: 100000px;
         height: auto;
         width: 90%;
+        display: none;
     }
 
     .birthday-div{
         margin-bottom: 5%;
-        gap: 0px;
+        gap: 10px;
         pointer-events: none;
         width: 100%;
+    }
+
+    .birthday-div>img{
+        opacity: 1;
+        width: 90%;
     }
 
 }
