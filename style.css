@@ -249,7 +249,6 @@ h1, h2, h3, h4, h5, h6, p {
 
 .image-2.active {
     transform: translate(-50%, -55%);
-    display: block;
     max-height: 90vh;
     opacity: 1;
 }
@@ -440,6 +439,10 @@ h1, h2, h3, h4, h5, h6, p {
         bottom: 5px;
         left: 5px;
         font-size: 12px;
+    }
+
+    .image-2{
+        pointer-events: none;
     }
 
 }
