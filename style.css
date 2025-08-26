@@ -443,6 +443,16 @@ h1, h2, h3, h4, h5, h6, p {
 
     .image-2{
         pointer-events: none;
+        max-height: 100000px;
+        height: auto;
+        width: 90%;
+    }
+
+    .birthday-div{
+        margin-bottom: 5%;
+        gap: 0px;
+        pointer-events: none;
+        width: 100%;
     }
 
 }
