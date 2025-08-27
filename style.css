@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
 }
 
@@ -142,7 +142,7 @@ h1, h2, h3, h4, h5, h6, p {
     transform: translate(-0%, -50%);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     height: 594px;
     pointer-events: none;
     align-items: flex-start;
@@ -157,12 +157,12 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 12px;
     font-weight: 600;
     border-bottom: 1px solid #EEEEEE;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
     width: 100%;
 }
 
 .side-part h4 {
-    padding-top: 5px;
+    padding-top: 0px;
     font-size: 14px;
     font-weight: 700;
 }
@@ -175,13 +175,13 @@ h1, h2, h3, h4, h5, h6, p {
 .side-part>a {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .see-more-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .see-more-content>p {
@@ -340,6 +340,7 @@ h1, h2, h3, h4, h5, h6, p {
     position: absolute;
     inset: 0;
     content: "";
+    right: 3px;
 }
 
 .changing-text{

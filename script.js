@@ -281,9 +281,9 @@ const words = ["Human", "Son", "Founder", "Brother", "Technologist"];
 let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
-let typingSpeed = 100;   // ms per character
-let deletingSpeed = 50;  // ms per character when deleting
-let delayBetweenWords = 1500; // pause before deleting
+let typingSpeed = 200;   // ms per character
+let deletingSpeed = 100;  // ms per character when deleting
+let delayBetweenWords = 3000; // pause before deleting
 
 function typeEffect() {
   const currentWord = words[wordIndex];
