@@ -121,3 +121,29 @@ players.forEach(p => {
   p.removeEventListener("click", handlePlayerClick); // safe no-op if not attached
   p.addEventListener("click", handlePlayerClick);
 });
+
+// Close birthday image when clicking outside
+document.addEventListener("click", (e) => {
+  const image2 = document.querySelector(".image-2");
+  const overlay = document.querySelector(".overlay");
+  const birthdayImg = document.querySelector(".birthday-div img");
+  const player1 = document.querySelector(".music-player");
+  const player2 = document.querySelector(".music-player-2");
+
+  // if image is not active, do nothing
+  if (!image2.classList.contains("active")) return;
+
+  // if click was inside allowed elements, do nothing
+  if (
+    image2.contains(e.target) ||
+    birthdayImg.contains(e.target) ||
+    player1.contains(e.target) ||
+    player2.contains(e.target)
+  ) {
+    return;
+  }
+
+  // otherwise close it
+  image2.classList.remove("active");
+  overlay.classList.remove("active");
+});

@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5, h6, p {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    margin-bottom: 5%;
 }
 
 .frame-div img {
@@ -44,7 +45,7 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -95,7 +96,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .music-player-2 {
     flex-direction: row !important;
-    top: calc(624px + ((100vh - 594px) / 2));
+    top: calc(594px + ((100vh - 594px) / 2));
     left: calc(95% - 262px);
     transform: translateY(-50%);
     width: 56px;
@@ -144,6 +145,7 @@ h1, h2, h3, h4, h5, h6, p {
     gap: 10px;
     height: 594px;
     pointer-events: none;
+    align-items: flex-start;
 }
 
 .side-part:has(h3.visible) {
@@ -152,19 +154,21 @@ h1, h2, h3, h4, h5, h6, p {
 
 .side-part>h3 {
     color: #AAAAAA;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     border-bottom: 1px solid #EEEEEE;
-    padding-bottom: 25px;
+    padding-bottom: 15px;
+    width: 100%;
 }
 
 .side-part h4 {
-    font-size: 16px;
+    padding-top: 5px;
+    font-size: 14px;
     font-weight: 700;
 }
 
 .side-part p {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -324,6 +328,42 @@ h1, h2, h3, h4, h5, h6, p {
     right: unset;
     left: 35px;
     top: 80px;
+}
+
+.work-btn{
+    pointer-events: none;
+    position: relative;
+}
+
+.work-btn::before{
+    background-color: black;
+    position: absolute;
+    inset: 0;
+    content: "";
+}
+
+.changing-text{
+    position: relative;
+    height: 14px;
+}
+
+.changing-text::after{
+    position: absolute;
+    content: "";
+    height: 110%;
+    width: 1px;
+    background-color: black;
+    animation: blink 1s linear infinite;
+    top: 60%;
+    right: -3.5px;
+    transform: translateY(-50%);
+}
+
+@keyframes blink{
+    from{ opacity: 0;}
+    to{
+        opacity: 1;
+    }
 }
 
 @media only screen and (min-width: 1024px) {

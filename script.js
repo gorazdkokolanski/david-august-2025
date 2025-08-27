@@ -136,6 +136,36 @@ document.querySelector(".see-more").addEventListener("click", () => {
   }, 50);
 });
 
+// Close about/thoughts when clicking anywhere else
+document.addEventListener("click", (e) => {
+  const about = document.querySelector(".about-part");
+  const thoughts = document.querySelector(".thoughts-part");
+  const aboutBtn = document.querySelector(".about-btn");
+  const thoughtsBtn = document.querySelector(".thoughts-btn");
+
+  // check if click happened inside about, thoughts, or buttons → do nothing
+  if (
+    about.contains(e.target) ||
+    thoughts.contains(e.target) ||
+    aboutBtn.contains(e.target) ||
+    thoughtsBtn.contains(e.target)
+  ) {
+    return;
+  }
+
+  // otherwise close them
+  aboutOpen = false;
+  thoughtsOpen = false;
+  appeared = true;
+
+  about.querySelectorAll("*").forEach(el => el.classList.remove("visible"));
+  thoughts.querySelectorAll("*").forEach(el => el.classList.remove("visible"));
+
+  playerReappear();
+
+});
+
+
 
 // ---------- Playlist & double-click handling ----------
 const audio = document.querySelector("audio");
@@ -241,3 +271,47 @@ players.forEach(p => {
   p.removeEventListener("click", handlePlayerClick); // safe no-op if not attached
   p.addEventListener("click", handlePlayerClick);
 });
+
+
+const changingText = document.querySelector(".changing-text");
+
+// Words to cycle through
+const words = ["Human", "Son", "Founder", "Brother", "Technologist"];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+let typingSpeed = 100;   // ms per character
+let deletingSpeed = 50;  // ms per character when deleting
+let delayBetweenWords = 1500; // pause before deleting
+
+function typeEffect() {
+  const currentWord = words[wordIndex];
+
+  if (!deleting) {
+    // typing forward
+    changingText.textContent = currentWord.substring(0, charIndex + 1);
+    charIndex++;
+
+    if (charIndex === currentWord.length) {
+      // pause at end of word
+      deleting = true;
+      setTimeout(typeEffect, delayBetweenWords);
+      return;
+    }
+  } else {
+    // deleting backwards
+    changingText.textContent = currentWord.substring(0, charIndex - 1);
+    charIndex--;
+
+    if (charIndex === 0) {
+      deleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+    }
+  }
+
+  setTimeout(typeEffect, deleting ? deletingSpeed : typingSpeed);
+}
+
+// Start the typing effect
+typeEffect();
